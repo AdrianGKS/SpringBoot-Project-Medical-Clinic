@@ -6,3 +6,8 @@ Projeto da 'Clínica Médica' feito com base no Spring Boot Framework.
 - Spring Data JPA
 - Requisições GET
 - Requisições PUT e DELETE
+- Refatoração da API aplicando boas práticas
+- Lidando com erros
+- Spring Security
+- JSON Web Token
+- Controle de acesso com Security Filter
