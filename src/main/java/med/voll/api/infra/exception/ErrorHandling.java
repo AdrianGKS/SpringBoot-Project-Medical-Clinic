@@ -52,9 +52,16 @@ public class ErrorHandling {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro: " +ex.getLocalizedMessage());
     }
 
+    @ExceptionHandler(ValidationExcept.class)
+    public ResponseEntity errorHandlerBusinessRule(ValidationExcept ex) {
+        return ResponseEntity.badRequest().body("Erro: " + ex.getMessage());
+    }
+
     public record ErrorValidationDate(String field, String message){
         public ErrorValidationDate(FieldError error) {
             this(error.getField(), error.getDefaultMessage());
         }
     }
+
+
 }
