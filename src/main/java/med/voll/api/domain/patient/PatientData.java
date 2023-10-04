@@ -3,6 +3,7 @@ package med.voll.api.domain.patient;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import med.voll.api.domain.address.AddressData;
 
 public record PatientData(
@@ -15,10 +16,10 @@ public record PatientData(
         String email,
 
         @NotBlank
-        String telephone,
+        String cpf,
 
         @NotBlank
-        String cpf,
+        String telephone,
 
         @NotBlank
         @Valid

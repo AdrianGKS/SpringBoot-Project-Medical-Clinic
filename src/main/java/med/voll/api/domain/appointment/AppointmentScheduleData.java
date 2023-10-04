@@ -7,9 +7,7 @@ import med.voll.api.domain.doctor.Specialty;
 import java.time.LocalDateTime;
 
 public record AppointmentScheduleData(
-        Long id,
-
-        Long idDoctor,
+       Long idDoctor,
 
         @NotNull
         Long idPatient,

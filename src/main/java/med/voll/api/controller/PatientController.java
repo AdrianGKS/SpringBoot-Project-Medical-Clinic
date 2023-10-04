@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.patient.*;
 import med.voll.api.domain.patient.DetailsPatientData;
@@ -14,6 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("patient")
+@SecurityRequirement(name = "bearer-key")
 public class PatientController {
 
     @Autowired
@@ -31,7 +33,7 @@ public class PatientController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ListPatientData>> list(@PageableDefault(page = 0, size = 10, sort = {"name"}) Pageable pageable) {
+    public ResponseEntity<Page<ListPatientData>> list(@PageableDefault(page = 0, size = 10) Pageable pageable) {
         var page = repository.findByActiveTrue(pageable).map(ListPatientData::new);
         return ResponseEntity.ok(page);
     }
