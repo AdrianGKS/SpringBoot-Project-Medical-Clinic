@@ -11,3 +11,8 @@ Projeto da 'Clínica Médica' feito com base no Spring Boot Framework.
 - Spring Security
 - JSON Web Token
 - Controle de acesso com Security Filter
+- Agendamento de consultas
+- Regras de negócio
+- Documentação da API
+- Testes automatizados
+- Build do projeto
